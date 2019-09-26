@@ -57,6 +57,7 @@ check the output
 Installation
 ============
 Use pip online:
+
 .. code:: bash
 
     pip install git+https://github.com/RadiantJeral/torchvision_nightly.git
