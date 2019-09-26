@@ -2,7 +2,6 @@
 import os
 import io
 import re
-import shutil
 import sys
 from setuptools import setup, find_packages
 from pkg_resources import get_distribution, DistributionNotFound
@@ -35,24 +34,20 @@ def find_version(*file_paths):
 readme = open('README.rst').read()
 
 VERSION = find_version('torchvision', '__init__.py')
-#VERSION = find_version('torchvision', '__init__.py') + ".post2"
 
 requirements = [
     'numpy',
     'six',
+    'torch',
 ]
-#    'torch',
 
 pillow_ver = ' >= 4.1.1'
 pillow_req = 'pillow-simd' if get_dist('pillow-simd') is not None else 'pillow'
 requirements.append(pillow_req + pillow_ver)
 
-tqdm_ver = ' == 4.19.9' if sys.version_info[0] < 3 else ''
-requirements.append('tqdm' + tqdm_ver)
-
 setup(
     # Metadata
-    name='torchvision-nightly',
+    name='torchvision',
     version=VERSION,
     author='PyTorch Core Team',
     author_email='soumith@pytorch.org',
@@ -66,4 +61,7 @@ setup(
 
     zip_safe=True,
     install_requires=requirements,
+    extras_require={
+        "scipy": ["scipy"],
+    },
 )
