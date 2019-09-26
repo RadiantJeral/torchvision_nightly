@@ -16,20 +16,48 @@ torchvision
 
 The torchvision package consists of popular datasets, model architectures, and common image transformations for computer vision.
 
+This repository generates torchvision_nightly based v0.2.3, which had been deleted officially. I build .whl file followed by issue933[.. image:: https://codecov.io/gh/pytorch/vision/branch/master/graph/badge.svg](.. image:: https://codecov.io/gh/pytorch/vision/branch/master/graph/badge.svg "issue833")
+
+Build
+=====
+    git clone https://github.com/RadiantJeral/torchvision_nightly.git
+
+    cd vision
+
+    rm -rf dist/* 
+
+generate .tar.gz file
+
+    python setup.py sdist
+
+generate .whl file 
+
+    python setup.py bdist_wheel 
+
+check the output
+
+    ls -l dist
+
+    echo "Uploading dist/* to pypi" twine upload dist/*
+
 Installation
 ============
+Use pip online:
+
+    pip install git+https://github.com/RadiantJeral/torchvision_nightly.git
 
 Anaconda:
 
 .. code:: bash
 
-    conda install torchvision -c pytorch
+    conda install torchvision_nightly-0.2.3-py2.py3-none-any.whl
 
 pip:
 
 .. code:: bash
 
-    pip install torchvision
+    pip install torchvision_nightly-0.2.3-py2.py3-none-any.whl
+
 
 From source:
 
