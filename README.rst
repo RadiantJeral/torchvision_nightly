@@ -1,5 +1,5 @@
-torchvision
-============
+torchvision_nightly
+===================
 
 .. image:: https://travis-ci.org/pytorch/vision.svg?branch=master
     :target: https://travis-ci.org/pytorch/vision
@@ -16,33 +16,48 @@ torchvision
 
 The torchvision package consists of popular datasets, model architectures, and common image transformations for computer vision.
 
-This repository generates torchvision_nightly based v0.2.3, which had been deleted officially. I build .whl file followed by issue933[.. image:: https://codecov.io/gh/pytorch/vision/branch/master/graph/badge.svg](.. image:: https://codecov.io/gh/pytorch/vision/branch/master/graph/badge.svg "issue833")
+This repository generates torchvision_nightly based v0.2.3, which had been deleted officially. I build `.whl` file followed by [issue833](https://github.com/pytorch/vision/issues/833) and [custom build](https://github.com/fastai/fastai/tree/master/builds/custom-pip-builds/torchvision).
 
 Build
 =====
+.. code:: bash
+
     git clone https://github.com/RadiantJeral/torchvision_nightly.git
+
+.. code:: bash
 
     cd vision
 
+.. code:: bash
+
     rm -rf dist/* 
 
-generate .tar.gz file
+generate `.tar.gz` file
+
+.. code:: bash
 
     python setup.py sdist
 
-generate .whl file 
+generate `.whl` file 
+
+.. code:: bash
 
     python setup.py bdist_wheel 
 
 check the output
 
+.. code:: bash
+
     ls -l dist
+
+.. code:: bash
 
     echo "Uploading dist/* to pypi" twine upload dist/*
 
 Installation
 ============
 Use pip online:
+.. code:: bash
 
     pip install git+https://github.com/RadiantJeral/torchvision_nightly.git
 
